@@ -29,7 +29,9 @@ let make = (_children) => {
   ...component,
   render: _self =>
     <Container>
-      <Text style=styles##text> (string("Hello!")) </Text>
+      <Header searchBar=false rounded=false>
+        <Text style=styles##text> (string("Hello!")) </Text>
+      </Header>
     </Container>,
 };
 

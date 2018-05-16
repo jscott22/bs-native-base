@@ -4,6 +4,7 @@
 var Block = require("bs-platform/lib/js/block.js");
 var ReasonReact = require("reason-react/lib/js/src/ReasonReact.js");
 var Text$BsReactNative = require("bs-react-native/lib/js/src/components/text.js");
+var Header$BsNativeBase = require("bs-native-base/lib/js/src/components/Header.js");
 var Style$BsReactNative = require("bs-react-native/lib/js/src/style.js");
 var Container$BsNativeBase = require("bs-native-base/lib/js/src/components/Container.js");
 var StyleSheet$BsReactNative = require("bs-react-native/lib/js/src/styleSheet.js");
@@ -45,7 +46,7 @@ function make() {
           /* willUpdate */component[/* willUpdate */7],
           /* shouldUpdate */component[/* shouldUpdate */8],
           /* render */(function () {
-              return ReasonReact.element(/* None */0, /* None */0, Container$BsNativeBase.make(/* None */0)(/* array */[ReasonReact.element(/* None */0, /* None */0, Text$BsReactNative.make(/* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* Some */[styles.text], /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* array */["Hello!"]))]));
+              return ReasonReact.element(/* None */0, /* None */0, Container$BsNativeBase.make(/* None */0)(/* array */[ReasonReact.element(/* None */0, /* None */0, Header$BsNativeBase.make(/* None */0, false, false)(/* array */[ReasonReact.element(/* None */0, /* None */0, Text$BsReactNative.make(/* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* Some */[styles.text], /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* array */["Hello!"]))]))]));
             }),
           /* initialState */component[/* initialState */10],
           /* retainedProps */component[/* retainedProps */11],

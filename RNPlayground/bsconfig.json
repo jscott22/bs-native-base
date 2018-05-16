@@ -9,7 +9,7 @@
   },
   "namespace": true,
   "bs-dependencies": [
-    "reason-react", "bs-react-native", "bs-react-native-navigation", "../../"
+    "reason-react", "bs-react-native", "bs-native-base"
   ],
   "refmt": 3,
   "warnings": {
