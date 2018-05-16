@@ -2,33 +2,12 @@
 'use strict';
 
 var Block = require("bs-platform/lib/js/block.js");
-var Font$BsExpo = require("bs-expo/lib/js/src/font.js");
 var ReasonReact = require("reason-react/lib/js/src/ReasonReact.js");
 var Text$BsReactNative = require("bs-react-native/lib/js/src/components/text.js");
 var View$BsReactNative = require("bs-react-native/lib/js/src/components/view.js");
 var StyleProvider$BsNativeBase = require("bs-native-base/lib/js/src/components/StyleProvider.js");
 
-var component = ReasonReact.reducerComponent("Welcome");
-
-var fontsPromise = Font$BsExpo.loadAll(/* :: */[
-      /* tuple */[
-        "Roboto",
-        require("native-base/Fonts/Roboto.ttf")
-      ],
-      /* :: */[
-        /* tuple */[
-          "Roboto_medium",
-          require("native-base/Fonts/Roboto_medium.ttf")
-        ],
-        /* :: */[
-          /* tuple */[
-            "Ionicons",
-            require("@expo/vector-icons/fonts/Ionicons.ttf")
-          ],
-          /* [] */0
-        ]
-      ]
-    ]);
+var component = ReasonReact.reducerComponent("Setup");
 
 function make() {
   return /* record */[
@@ -42,7 +21,7 @@ function make() {
           /* willUpdate */component[/* willUpdate */7],
           /* shouldUpdate */component[/* shouldUpdate */8],
           /* render */(function () {
-              return ReasonReact.element(/* None */0, /* None */0, StyleProvider$BsNativeBase.make(/* None */0, /* array */[ReasonReact.element(/* None */0, /* None */0, View$BsReactNative.make(/* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0)(/* array */[ReasonReact.element(/* None */0, /* None */0, Text$BsReactNative.make(/* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* array */["Text in Welcome"]))]))]));
+              return ReasonReact.element(/* None */0, /* None */0, StyleProvider$BsNativeBase.make(/* None */0, /* array */[ReasonReact.element(/* None */0, /* None */0, View$BsReactNative.make(/* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0)(/* array */[ReasonReact.element(/* None */0, /* None */0, Text$BsReactNative.make(/* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* array */["Text in Setup"]))]))]));
             }),
           /* initialState */(function () {
               return /* record */[/* ready */false];
@@ -56,12 +35,13 @@ function make() {
         ];
 }
 
-var jsComponent = ReasonReact.wrapReasonForJs(component, (function () {
+var $$default = ReasonReact.wrapReasonForJs(component, (function () {
         return make(/* array */[]);
       }));
 
 exports.component = component;
-exports.fontsPromise = fontsPromise;
 exports.make = make;
-exports.jsComponent = jsComponent;
+exports.$$default = $$default;
+exports.default = $$default;
+exports.__esModule = true;
 /* component Not a pure module */

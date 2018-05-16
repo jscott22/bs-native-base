@@ -24,6 +24,7 @@
     "preset": "jest-expo"
   },
   "dependencies": {
+    "bs-expo": "^0.0.3",
     "bs-native-base": "../",
     "bs-react-native": "^0.7.0",
     "expo": "^27.0.1",

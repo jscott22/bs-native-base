@@ -1,38 +1,34 @@
-open ReasonReact;
-
 open BsReactNative;
 open BsNativeBase;
 
-let styles =
-  StyleSheet.create(
-    Style.(
-      {
-        "container":
-          style([
-            flex(1.),
-            alignItems(Center),
-            justifyContent(Center),
-          ]),
-        "text":
-          style([
-            fontSize(Float(32.)),
-            marginBottom(Pt(20.)),
-            fontWeight(`Bold),
-          ]),
-      }
-    ),
-  );
+type state = {
+  ready: bool,
+};
 
-let component = statelessComponent("Welcome");
+type action =
+  | SetReady;
+
+let component = ReasonReact.reducerComponent("Welcome");
+
+let fontsPromise = BsExpo.Font.loadAll([
+  ("Roboto",  BsReactNative.Packager.require("native-base/Fonts/Roboto.ttf")),
+  ("Roboto_medium",  BsReactNative.Packager.require("native-base/Fonts/Roboto_medium.ttf")),
+  ("Ionicons", BsReactNative.Packager.require("@expo/vector-icons/fonts/Ionicons.ttf")),
+]);
 
 let make = (_children) => {
   ...component,
+  initialState: () => {ready: false},
+  reducer: (action, _state) =>
+    switch(action) {
+    | SetReady => ReasonReact.Update({ready: true})
+    },
   render: _self =>
-    <Container>
-      <Header searchBar=false rounded=false>
-        <Text style=styles##text> (string("Hello!")) </Text>
-      </Header>
-    </Container>,
+  <StyleProvider>
+    <View>
+      <Text>{ReasonReact.string("Text in Welcome")}</Text>
+    </View>
+  </StyleProvider>
 };
 
-let jsComponent = ReasonReact.wrapReasonForJs(~component, (_props) => make(()));
+let jsComponent = ReasonReact.wrapReasonForJs(~component, _jsProps => make([||]));

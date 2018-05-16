@@ -9,8 +9,8 @@ type routesConfig = {
 };
 
 [@bs.module "react-navigation"]
-external createDrawerNavigator : (routesConfig) => ReasonReact.reactClass = "";
+external createDrawerNavigator : (routesConfig) => ReasonReact.reactElement = "";
 
-[@bs.module "react-navigation"] external tabBarBottom : ReasonReact.reactClass = "TabBarBottom";
+[@bs.module "react-navigation"] external tabBarBottom : ReasonReact.reactElement = "TabBarBottom";
 
 let create = (~routeConfig) => createDrawerNavigator(routeConfig);

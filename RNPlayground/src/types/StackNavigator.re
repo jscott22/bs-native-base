@@ -9,8 +9,8 @@ type routesConfig = {
 };
 
 [@bs.module "react-navigation"]
-external createStackNavigator : (routesConfig) => ReasonReact.reactClass = "";
+external createStackNavigator : (routesConfig) => ReasonReact.reactElement = "";
 
-[@bs.module "react-navigation"] external tabBarBottom : ReasonReact.reactClass = "TabBarBottom";
+[@bs.module "react-navigation"] external tabBarBottom : ReasonReact.reactElement = "TabBarBottom";
 
 let create = (~routeConfig) => createStackNavigator(routeConfig);

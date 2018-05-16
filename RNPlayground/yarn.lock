@@ -1756,6 +1756,12 @@ browser-resolve@^1.11.2:
   dependencies:
     resolve "1.1.7"
 
+bs-expo@^0.0.3:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/bs-expo/-/bs-expo-0.0.3.tgz#dd90db73d104eddf455a916c53cd56bd175ec29c"
+  dependencies:
+    bs-react-native "^0.5.0"
+
 bs-native-base@../:
   version "0.1.1"
   dependencies:
@@ -1766,6 +1772,10 @@ bs-native-base@../:
 bs-platform@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/bs-platform/-/bs-platform-3.0.0.tgz#38f200730db52fdea37819376b6ac3dfb20244c0"
+
+bs-react-native@^0.5.0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/bs-react-native/-/bs-react-native-0.5.0.tgz#f3b147905009fe45edb302cd13d969bb3f52d9aa"
 
 bs-react-native@^0.7.0:
   version "0.7.0"

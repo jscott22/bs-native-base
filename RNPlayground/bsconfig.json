@@ -9,7 +9,7 @@
   },
   "namespace": true,
   "bs-dependencies": [
-    "reason-react", "bs-react-native", "bs-native-base"
+    "reason-react", "bs-react-native", "bs-native-base", "bs-expo"
   ],
   "refmt": 3,
   "warnings": {

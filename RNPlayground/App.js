@@ -1,2 +1,3 @@
-import { component } from "./lib/js/src/App.js";
+import { component } from "./lib/js/src/navigation/AppNavigation";
+console.log(component);
 export default component;
