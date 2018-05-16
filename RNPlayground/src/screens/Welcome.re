@@ -19,16 +19,35 @@ let fontsPromise = BsExpo.Font.loadAll([
 let make = (_children) => {
   ...component,
   initialState: () => {ready: false},
+  didMount: (self) => {
+    fontsPromise
+    |> Js.Promise.then_((_value) => {
+      self.send(SetReady);
+      Js.Promise.resolve(());
+    })
+    |> Js.Promise.catch(err => {
+      Js.Promise.resolve(());
+    })
+    |> ignore;
+    ()
+  },
   reducer: (action, _state) =>
     switch(action) {
     | SetReady => ReasonReact.Update({ready: true})
     },
-  render: _self =>
-  <StyleProvider>
-    <View>
-      <Text>{ReasonReact.string("Text in Welcome")}</Text>
-    </View>
-  </StyleProvider>
+  render: self => {
+    if(self.state.ready) {
+      <StyleProvider>
+      <View>
+        <Text>{ReasonReact.string("Text in Welcome")}</Text>
+      </View>
+    </StyleProvider>
+    } else {
+      <View>
+        <Text>{ReasonReact.string("LOADING!!!")}</Text>
+      </View>
+    }
+  }
 };
 
 let jsComponent = ReasonReact.wrapReasonForJs(~component, _jsProps => make([||]));

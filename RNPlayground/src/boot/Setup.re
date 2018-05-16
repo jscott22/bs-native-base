@@ -1,4 +1,4 @@
-open BsReactNative;
+/* open BsReactNative;
 open BsNativeBase;
 
 type state = {
@@ -25,4 +25,4 @@ let make = (_children) => {
   </StyleProvider>
 };
 
-let default = ReasonReact.wrapReasonForJs(~component, _jsProps => make([||]));
+let default = ReasonReact.wrapReasonForJs(~component, _jsProps => make([||])); */
