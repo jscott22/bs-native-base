@@ -7,7 +7,29 @@ var Font$BsExpo = require("bs-expo/lib/js/src/font.js");
 var ReasonReact = require("reason-react/lib/js/src/ReasonReact.js");
 var Text$BsReactNative = require("bs-react-native/lib/js/src/components/text.js");
 var View$BsReactNative = require("bs-react-native/lib/js/src/components/view.js");
+var Style$BsReactNative = require("bs-react-native/lib/js/src/style.js");
+var Container$BsNativeBase = require("bs-native-base/lib/js/src/components/Container.js");
+var StatusBar$BsReactNative = require("bs-react-native/lib/js/src/components/statusBar.js");
+var StyleSheet$BsReactNative = require("bs-react-native/lib/js/src/styleSheet.js");
 var StyleProvider$BsNativeBase = require("bs-native-base/lib/js/src/components/StyleProvider.js");
+var ImageBackground$BsReactNative = require("bs-react-native/lib/js/src/components/imageBackground.js");
+
+var styles = StyleSheet$BsReactNative.create({
+      imageContainer: Style$BsReactNative.style(/* :: */[
+            Style$BsReactNative.flex(1),
+            /* [] */0
+          ]),
+      logo: Style$BsReactNative.style(/* :: */[
+            Style$BsReactNative.width(/* Pt */Block.__(0, [90])),
+            /* :: */[
+              Style$BsReactNative.alignSelf(/* Center */2),
+              /* :: */[
+                Style$BsReactNative.maxHeight(/* Pt */Block.__(0, [100])),
+                /* [] */0
+              ]
+            ]
+          ])
+    });
 
 var component = ReasonReact.reducerComponent("Welcome");
 
@@ -41,7 +63,8 @@ function make() {
               fontsPromise.then((function () {
                         Curry._1(self[/* send */3], /* SetReady */0);
                         return Promise.resolve(/* () */0);
-                      })).catch((function () {
+                      })).catch((function (err) {
+                      console.log("Error!", err);
                       return Promise.resolve(/* () */0);
                     }));
               return /* () */0;
@@ -52,7 +75,10 @@ function make() {
           /* shouldUpdate */component[/* shouldUpdate */8],
           /* render */(function (self) {
               if (self[/* state */1][/* ready */0]) {
-                return ReasonReact.element(/* None */0, /* None */0, StyleProvider$BsNativeBase.make(/* None */0, /* array */[ReasonReact.element(/* None */0, /* None */0, View$BsReactNative.make(/* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0)(/* array */[ReasonReact.element(/* None */0, /* None */0, Text$BsReactNative.make(/* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* array */["Text in Welcome"]))]))]));
+                return ReasonReact.element(/* None */0, /* None */0, StyleProvider$BsNativeBase.make(/* None */0, /* array */[ReasonReact.element(/* None */0, /* None */0, Container$BsNativeBase.make(/* Some */[styles.imageContainer], /* array */[
+                                          ReasonReact.element(/* None */0, /* None */0, StatusBar$BsReactNative.make(/* None */0, /* Some */[/* lightContent */-106329341], /* None */0, /* None */0, /* None */0, /* None */0, /* None */0)(/* array */[])),
+                                          ReasonReact.element(/* None */0, /* None */0, ImageBackground$BsReactNative.make(/* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* Some */[/* Required */Block.__(1, [require("../../../../assets/launchscreen-bg.png")])], /* Some */[styles.imageContainer], /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0)(/* array */[]))
+                                        ]))]));
               } else {
                 return ReasonReact.element(/* None */0, /* None */0, View$BsReactNative.make(/* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0)(/* array */[ReasonReact.element(/* None */0, /* None */0, Text$BsReactNative.make(/* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* array */["LOADING!!!"]))]));
               }
@@ -73,8 +99,9 @@ var jsComponent = ReasonReact.wrapReasonForJs(component, (function () {
         return make(/* array */[]);
       }));
 
+exports.styles = styles;
 exports.component = component;
 exports.fontsPromise = fontsPromise;
 exports.make = make;
 exports.jsComponent = jsComponent;
-/* component Not a pure module */
+/* styles Not a pure module */

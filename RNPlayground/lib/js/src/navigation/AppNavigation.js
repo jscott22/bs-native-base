@@ -3,15 +3,40 @@
 
 var Welcome$RnPlayground = require("../screens/Welcome.js");
 var StackNavigator$RnPlayground = require("../types/StackNavigator.js");
+var DrawerNavigator$RnPlayground = require("../types/DrawerNavigator.js");
 
-var routeConfig = {
+var drawerConfig = {
   welcome: {
     screen: Welcome$RnPlayground.jsComponent
   }
 };
 
-var component = StackNavigator$RnPlayground.create(routeConfig);
+var drawerNavigatorConfig = {
+  initialRouteName: "welcome",
+  contentOptions: {
+    activeTintColor: "#e91e63"
+  }
+};
 
+var drawer = DrawerNavigator$RnPlayground.create(drawerConfig, drawerNavigatorConfig);
+
+var routeConfig = {
+  drawer: {
+    screen: drawer
+  }
+};
+
+var stackNavigatorConfig = {
+  initialRouteName: "drawer",
+  headerMode: "none"
+};
+
+var component = StackNavigator$RnPlayground.create(routeConfig, stackNavigatorConfig);
+
+exports.drawerConfig = drawerConfig;
+exports.drawerNavigatorConfig = drawerNavigatorConfig;
+exports.drawer = drawer;
 exports.routeConfig = routeConfig;
+exports.stackNavigatorConfig = stackNavigatorConfig;
 exports.component = component;
-/* component Not a pure module */
+/* drawer Not a pure module */

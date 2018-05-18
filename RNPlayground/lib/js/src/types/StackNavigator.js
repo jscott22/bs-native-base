@@ -3,8 +3,8 @@
 
 var ReactNavigation = require("react-navigation");
 
-function create(routeConfig) {
-  return ReactNavigation.createStackNavigator(routeConfig);
+function create(routeConfig, stackNavigatorConfig) {
+  return ReactNavigation.createStackNavigator(routeConfig, stackNavigatorConfig);
 }
 
 exports.create = create;

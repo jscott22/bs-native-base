@@ -8,13 +8,20 @@ type state = {
 type action =
   | SetReady;
 
+
+  let styles = StyleSheet.create(Style.({
+    "imageContainer": style([flex(1.)]),
+    "logo": style([width(Pt(90.)), alignSelf(Center), maxHeight(Pt(100.))]),
+  }));
+
 let component = ReasonReact.reducerComponent("Welcome");
 
 let fontsPromise = BsExpo.Font.loadAll([
-  ("Roboto",  BsReactNative.Packager.require("native-base/Fonts/Roboto.ttf")),
-  ("Roboto_medium",  BsReactNative.Packager.require("native-base/Fonts/Roboto_medium.ttf")),
-  ("Ionicons", BsReactNative.Packager.require("@expo/vector-icons/fonts/Ionicons.ttf")),
+  ("Roboto",  Packager.require("native-base/Fonts/Roboto.ttf")),
+  ("Roboto_medium",  Packager.require("native-base/Fonts/Roboto_medium.ttf")),
+  ("Ionicons", Packager.require("@expo/vector-icons/fonts/Ionicons.ttf")),
 ]);
+
 
 let make = (_children) => {
   ...component,
@@ -26,6 +33,7 @@ let make = (_children) => {
       Js.Promise.resolve(());
     })
     |> Js.Promise.catch(err => {
+      Js.log2("Error!", err);
       Js.Promise.resolve(());
     })
     |> ignore;
@@ -38,9 +46,10 @@ let make = (_children) => {
   render: self => {
     if(self.state.ready) {
       <StyleProvider>
-      <View>
-        <Text>{ReasonReact.string("Text in Welcome")}</Text>
-      </View>
+      <Container style=styles##imageContainer>
+          <StatusBar barStyle=`lightContent />
+          <ImageBackground style=styles##imageContainer source=Required(Packager.require("../../../../assets/launchscreen-bg.png")) />
+      </Container>
     </StyleProvider>
     } else {
       <View>

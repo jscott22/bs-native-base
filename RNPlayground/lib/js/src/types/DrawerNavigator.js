@@ -3,8 +3,8 @@
 
 var ReactNavigation = require("react-navigation");
 
-function create(routeConfig) {
-  return ReactNavigation.createDrawerNavigator(routeConfig);
+function create(routeConfig, drawerNavigatorConfig) {
+  return ReactNavigation.createDrawerNavigator(routeConfig, drawerNavigatorConfig);
 }
 
 exports.create = create;

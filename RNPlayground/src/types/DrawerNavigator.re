@@ -8,9 +8,18 @@ type routesConfig = {
   "welcome": routeConfig,
 };
 
+type contentOptions = {
+  .
+  "activeTintColor": string
+};
+
+type drawerNavigatorConfig = {
+  .
+  "initialRouteName": string,
+  "contentOptions": contentOptions
+};
+
 [@bs.module "react-navigation"]
-external createDrawerNavigator : (routesConfig) => ReasonReact.reactElement = "";
+external createDrawerNavigator : (routesConfig, drawerNavigatorConfig) => ReasonReact.reactClass = "";
 
-[@bs.module "react-navigation"] external tabBarBottom : ReasonReact.reactElement = "TabBarBottom";
-
-let create = (~routeConfig) => createDrawerNavigator(routeConfig);
+let create = (~routeConfig, ~drawerNavigatorConfig) => createDrawerNavigator(routeConfig, drawerNavigatorConfig);
