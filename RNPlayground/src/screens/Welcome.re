@@ -11,7 +11,8 @@ type action =
 
   let styles = StyleSheet.create(Style.({
     "imageContainer": style([flex(1.)]),
-    "logo": style([width(Pt(90.)), alignSelf(Center), maxHeight(Pt(100.))]),
+    "logoContainer": style([flex(1.), marginTop(Pt(20.)) ]),
+    "logo": style([width(Pt(280.)), height(Pt(100.)), position(Absolute), left(Pt(40.)), top(Pt(35.))]),
   }));
 
 let component = ReasonReact.reducerComponent("Welcome");
@@ -49,6 +50,9 @@ let make = (_children) => {
       <Container style=styles##imageContainer>
           <StatusBar barStyle=`lightContent />
           <ImageBackground style=styles##imageContainer source=Required(Packager.require("../../../../assets/launchscreen-bg.png")) />
+          <View style=styles##logoContainer>
+            <Image style=styles##logo source=Required(Packager.require("../../../../assets/logo-kitchen-sink.png")) />
+          </View>
       </Container>
     </StyleProvider>
     } else {

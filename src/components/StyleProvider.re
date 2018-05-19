@@ -1,16 +1,14 @@
 [@bs.module "native-base"]
-external container : ReasonReact.reactClass = "Container";
+external styleProvider : ReasonReact.reactClass = "StyleProvider";
 
 let make = (~style=?, children) =>
       ReasonReact.wrapJsForReason(
-        ~reactClass=container,
+        ~reactClass=styleProvider,
         ~props=
-          Props.extendView(
             Js.Undefined.(
               {
                 "style": fromOption(style)
               }
-            )
-          ),
+            ),
         children
         );

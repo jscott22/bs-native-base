@@ -7,6 +7,7 @@ var Font$BsExpo = require("bs-expo/lib/js/src/font.js");
 var ReasonReact = require("reason-react/lib/js/src/ReasonReact.js");
 var Text$BsReactNative = require("bs-react-native/lib/js/src/components/text.js");
 var View$BsReactNative = require("bs-react-native/lib/js/src/components/view.js");
+var Image$BsReactNative = require("bs-react-native/lib/js/src/components/image.js");
 var Style$BsReactNative = require("bs-react-native/lib/js/src/style.js");
 var Container$BsNativeBase = require("bs-native-base/lib/js/src/components/Container.js");
 var StatusBar$BsReactNative = require("bs-react-native/lib/js/src/components/statusBar.js");
@@ -19,13 +20,26 @@ var styles = StyleSheet$BsReactNative.create({
             Style$BsReactNative.flex(1),
             /* [] */0
           ]),
-      logo: Style$BsReactNative.style(/* :: */[
-            Style$BsReactNative.width(/* Pt */Block.__(0, [90])),
+      logoContainer: Style$BsReactNative.style(/* :: */[
+            Style$BsReactNative.flex(1),
             /* :: */[
-              Style$BsReactNative.alignSelf(/* Center */2),
+              Style$BsReactNative.marginTop(/* Pt */Block.__(0, [20])),
+              /* [] */0
+            ]
+          ]),
+      logo: Style$BsReactNative.style(/* :: */[
+            Style$BsReactNative.width(/* Pt */Block.__(0, [280])),
+            /* :: */[
+              Style$BsReactNative.height(/* Pt */Block.__(0, [100])),
               /* :: */[
-                Style$BsReactNative.maxHeight(/* Pt */Block.__(0, [100])),
-                /* [] */0
+                Style$BsReactNative.position(/* Absolute */0),
+                /* :: */[
+                  Style$BsReactNative.left(/* Pt */Block.__(0, [40])),
+                  /* :: */[
+                    Style$BsReactNative.top(/* Pt */Block.__(0, [35])),
+                    /* [] */0
+                  ]
+                ]
               ]
             ]
           ])
@@ -77,7 +91,8 @@ function make() {
               if (self[/* state */1][/* ready */0]) {
                 return ReasonReact.element(/* None */0, /* None */0, StyleProvider$BsNativeBase.make(/* None */0, /* array */[ReasonReact.element(/* None */0, /* None */0, Container$BsNativeBase.make(/* Some */[styles.imageContainer], /* array */[
                                           ReasonReact.element(/* None */0, /* None */0, StatusBar$BsReactNative.make(/* None */0, /* Some */[/* lightContent */-106329341], /* None */0, /* None */0, /* None */0, /* None */0, /* None */0)(/* array */[])),
-                                          ReasonReact.element(/* None */0, /* None */0, ImageBackground$BsReactNative.make(/* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* Some */[/* Required */Block.__(1, [require("../../../../assets/launchscreen-bg.png")])], /* Some */[styles.imageContainer], /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0)(/* array */[]))
+                                          ReasonReact.element(/* None */0, /* None */0, ImageBackground$BsReactNative.make(/* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* Some */[/* Required */Block.__(1, [require("../../../../assets/launchscreen-bg.png")])], /* Some */[styles.imageContainer], /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0)(/* array */[])),
+                                          ReasonReact.element(/* None */0, /* None */0, View$BsReactNative.make(/* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* Some */[styles.logoContainer], /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0)(/* array */[ReasonReact.element(/* None */0, /* None */0, Image$BsReactNative.make(/* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* Some */[/* Required */Block.__(1, [require("../../../../assets/logo-kitchen-sink.png")])], /* Some */[styles.logo], /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0)(/* array */[]))]))
                                         ]))]));
               } else {
                 return ReasonReact.element(/* None */0, /* None */0, View$BsReactNative.make(/* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0)(/* array */[ReasonReact.element(/* None */0, /* None */0, Text$BsReactNative.make(/* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* array */["LOADING!!!"]))]));

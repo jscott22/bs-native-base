@@ -1,7 +1,7 @@
 [@bs.module "native-base"]
 external header : ReasonReact.reactClass = "Header";
 
-let make = (~style=?, ~searchBar: bool, ~rounded: bool) =>
+let make = (~style=?, ~searchBar: option(bool)=?, ~rounded: option(bool)=?, children) =>
       ReasonReact.wrapJsForReason(
         ~reactClass=header,
         ~props=
@@ -9,9 +9,10 @@ let make = (~style=?, ~searchBar: bool, ~rounded: bool) =>
             Js.Undefined.(
               {
                 "style": fromOption(style),
-                "searchBar": searchBar,
-                "rounded": rounded
+                "searchBar": fromOption(searchBar),
+                "rounded": fromOption(rounded)
               }
             )
-          )
+          ),
+        children
         );
