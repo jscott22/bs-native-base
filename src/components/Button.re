@@ -11,11 +11,25 @@ let make =
       ~warning: option(bool)=?,
       ~info: option(bool)=?,
       ~bordered: option(bool)=?,
-      ~disabled: option(bool)=?,
       ~rounded: option(bool)=?,
       ~large: option(bool)=?,
       ~small: option(bool)=?,
       ~active: option(bool)=?,
+      ~accessibilityLabel=?,
+      ~accessible=?,
+      ~hitSlop=?,
+      ~onAccessibilityType=?,
+      ~delayLongPress=?,
+      ~delayPressIn=?,
+      ~delayPressOut=?,
+      ~disabled=?,
+      ~accessibilityTraits=?,
+      ~onLayout=?,
+      ~onLongPress=?,
+      ~onPress=?,
+      ~onPressIn=?,
+      ~onPressOut=?,
+      ~pressRetentionOffset=?,
       children,
     ) =>
   ReasonReact.wrapJsForReason(
@@ -38,6 +52,48 @@ let make =
             "large": fromOption(large),
             "small": fromOption(small),
             "active": fromOption(active),
+            "accessibilityLabel": fromOption(accessibilityLabel),
+            "accessible":
+              fromOption(UtilsRN.optBoolToOptJsBoolean(accessible)),
+            "hitSlop": fromOption(hitSlop),
+            "onAccessibilityType": fromOption(onAccessibilityType),
+            "onLayout": fromOption(onLayout),
+            "delayLongPress": fromOption(delayLongPress),
+            "delayPressIn": fromOption(delayPressIn),
+            "delayPressOut": fromOption(delayPressOut),
+            "onLongPress": fromOption(onLongPress),
+            "onPress": fromOption(onPress),
+            "onPressIn": fromOption(onPressIn),
+            "onPressOut": fromOption(onPressOut),
+            "pressRetentionOffset": fromOption(pressRetentionOffset),
+            "accessibilityTraits":
+              fromOption(
+                UtilsRN.option_map(
+                  traits => {
+                    let to_string =
+                      fun
+                      | `none => "none"
+                      | `button => "button"
+                      | `link => "link"
+                      | `header => "header"
+                      | `search => "search"
+                      | `image => "image"
+                      | `selected => "selected"
+                      | `plays => "plays"
+                      | `key => "key"
+                      | `text => "text"
+                      | `summary => "summary"
+                      | `disabled => "disabled"
+                      | `frequentUpdates => "frequentUpdates"
+                      | `startsMedia => "startsMedia"
+                      | `adjustable => "adjustable"
+                      | `allowsDirectInteraction => "allowsDirectInteraction"
+                      | `pageTurn => "pageTurn";
+                    traits |> List.map(to_string) |> Array.of_list;
+                  },
+                  accessibilityTraits,
+                ),
+              ),
           }
         ),
       ),
