@@ -35,67 +35,65 @@ let make =
   ReasonReact.wrapJsForReason(
     ~reactClass=button,
     ~props=
-      Props.extendTouchableOpacity(
-        Js.Undefined.(
-          {
-            "style": fromOption(style),
-            "block": fromOption(block),
-            "primary": fromOption(primary),
-            "transparent": fromOption(transparent),
-            "success": fromOption(success),
-            "danger": fromOption(danger),
-            "warning": fromOption(warning),
-            "info": fromOption(info),
-            "bordered": fromOption(bordered),
-            "disabled": fromOption(disabled),
-            "rounded": fromOption(rounded),
-            "large": fromOption(large),
-            "small": fromOption(small),
-            "active": fromOption(active),
-            "accessibilityLabel": fromOption(accessibilityLabel),
-            "accessible":
-              fromOption(UtilsRN.optBoolToOptJsBoolean(accessible)),
-            "hitSlop": fromOption(hitSlop),
-            "onAccessibilityType": fromOption(onAccessibilityType),
-            "onLayout": fromOption(onLayout),
-            "delayLongPress": fromOption(delayLongPress),
-            "delayPressIn": fromOption(delayPressIn),
-            "delayPressOut": fromOption(delayPressOut),
-            "onLongPress": fromOption(onLongPress),
-            "onPress": fromOption(onPress),
-            "onPressIn": fromOption(onPressIn),
-            "onPressOut": fromOption(onPressOut),
-            "pressRetentionOffset": fromOption(pressRetentionOffset),
-            "accessibilityTraits":
-              fromOption(
-                UtilsRN.option_map(
-                  traits => {
-                    let to_string =
-                      fun
-                      | `none => "none"
-                      | `button => "button"
-                      | `link => "link"
-                      | `header => "header"
-                      | `search => "search"
-                      | `image => "image"
-                      | `selected => "selected"
-                      | `plays => "plays"
-                      | `key => "key"
-                      | `text => "text"
-                      | `summary => "summary"
-                      | `disabled => "disabled"
-                      | `frequentUpdates => "frequentUpdates"
-                      | `startsMedia => "startsMedia"
-                      | `adjustable => "adjustable"
-                      | `allowsDirectInteraction => "allowsDirectInteraction"
-                      | `pageTurn => "pageTurn";
-                    traits |> List.map(to_string) |> Array.of_list;
-                  },
-                  accessibilityTraits,
-                ),
+      Js.Undefined.(
+        {
+          "style": fromOption(style),
+          "block": fromOption(block),
+          "primary": fromOption(primary),
+          "transparent": fromOption(transparent),
+          "success": fromOption(success),
+          "danger": fromOption(danger),
+          "warning": fromOption(warning),
+          "info": fromOption(info),
+          "bordered": fromOption(bordered),
+          "disabled": fromOption(disabled),
+          "rounded": fromOption(rounded),
+          "large": fromOption(large),
+          "small": fromOption(small),
+          "active": fromOption(active),
+          "accessibilityLabel": fromOption(accessibilityLabel),
+          "accessible":
+            fromOption(UtilsRN.optBoolToOptJsBoolean(accessible)),
+          "hitSlop": fromOption(hitSlop),
+          "onAccessibilityType": fromOption(onAccessibilityType),
+          "onLayout": fromOption(onLayout),
+          "delayLongPress": fromOption(delayLongPress),
+          "delayPressIn": fromOption(delayPressIn),
+          "delayPressOut": fromOption(delayPressOut),
+          "onLongPress": fromOption(onLongPress),
+          "onPress": fromOption(onPress),
+          "onPressIn": fromOption(onPressIn),
+          "onPressOut": fromOption(onPressOut),
+          "pressRetentionOffset": fromOption(pressRetentionOffset),
+          "accessibilityTraits":
+            fromOption(
+              UtilsRN.option_map(
+                traits => {
+                  let to_string =
+                    fun
+                    | `none => "none"
+                    | `button => "button"
+                    | `link => "link"
+                    | `header => "header"
+                    | `search => "search"
+                    | `image => "image"
+                    | `selected => "selected"
+                    | `plays => "plays"
+                    | `key => "key"
+                    | `text => "text"
+                    | `summary => "summary"
+                    | `disabled => "disabled"
+                    | `frequentUpdates => "frequentUpdates"
+                    | `startsMedia => "startsMedia"
+                    | `adjustable => "adjustable"
+                    | `allowsDirectInteraction => "allowsDirectInteraction"
+                    | `pageTurn => "pageTurn";
+                  traits |> List.map(to_string) |> Array.of_list;
+                },
+                accessibilityTraits,
               ),
-          }
-        ),
+            ),
+        }
       ),
     children,
   );
