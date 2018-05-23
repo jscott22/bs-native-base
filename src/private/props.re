@@ -294,6 +294,7 @@ let extendTouchableOpacity =
       ~activeOpacity=?,
       ~tvParallaxProperties=?,
       ~hasTVPreferredFocus=?,
+      moreProps,
     ) =>
   UtilsRN.objAssign2(
     Js.Undefined.(
@@ -345,4 +346,5 @@ let extendTouchableOpacity =
           ),
       }
     ),
+    moreProps,
   );
