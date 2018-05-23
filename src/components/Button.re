@@ -21,7 +21,7 @@ let make =
   ReasonReact.wrapJsForReason(
     ~reactClass=button,
     ~props=
-      Props.extendView(
+      Props.extendTouchableOpacity(
         Js.Undefined.(
           {
             "style": fromOption(style),
