@@ -42,7 +42,7 @@ let make =
             | Some(Octicons) => "Octicons"
             | Some(SimpleLineIcons) => "SimpleLineIcons"
             | Some(Zocial) => "Zocial"
-            | None => "EvilIcons"
+            | None => "Ionicons"
             },
           "name": fromOption(name),
           "ios": fromOption(ios),
