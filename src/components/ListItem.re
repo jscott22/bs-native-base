@@ -6,6 +6,7 @@ let make =
       ~style=?,
       ~itemDivider: option(bool)=?,
       ~button: option(bool)=?,
+      ~noBorder: option(bool)=?,
       ~hitSlop=?,
       ~accessible=?,
       ~accessibilityComponentType=?,
@@ -96,6 +97,7 @@ let make =
           "tvParallaxProperties": fromOption(tvParallaxProperties),
           "itemDivider": fromOption(itemDivider),
           "button": fromOption(button),
+          "noBorder": fromOption(noBorder),
         }
       ),
     children,
