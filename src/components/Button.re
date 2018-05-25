@@ -4,6 +4,7 @@ let make =
     (
       ~style=?,
       ~block: option(bool)=?,
+      ~full: option(bool)=?,
       ~primary: option(bool)=?,
       ~transparent: option(bool)=?,
       ~success: option(bool)=?,
@@ -39,6 +40,7 @@ let make =
         {
           "style": fromOption(style),
           "block": fromOption(block),
+          "full": fromOption(full),
           "primary": fromOption(primary),
           "transparent": fromOption(transparent),
           "success": fromOption(success),
