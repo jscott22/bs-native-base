@@ -1,4 +1,4 @@
-[@bs.module "native-base"] external title : ReasonReact.reactClass = "Title";
+[@bs.module "native-base"] external text : ReasonReact.reactClass = "Text";
 
 let make =
     (
@@ -24,7 +24,7 @@ let make =
       children,
     ) =>
   ReasonReact.wrapJsForReason(
-    ~reactClass=title,
+    ~reactClass=text,
     ~props=
       Js.Undefined.(
         {
