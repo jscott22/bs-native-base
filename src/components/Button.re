@@ -36,7 +36,7 @@ let make =
       ~activeOpacity=?,
       ~tvParallaxProperties=?,
       ~hasTVPreferredFocus=?,
-      children,
+      (),
     ) =>
   ReasonReact.wrapJsForReason(
     ~reactClass=button,
@@ -107,5 +107,4 @@ let make =
             ),
         }
       ),
-    children,
   );
