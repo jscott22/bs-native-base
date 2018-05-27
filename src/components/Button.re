@@ -33,6 +33,9 @@ let make =
       ~onPressIn=?,
       ~onPressOut=?,
       ~pressRetentionOffset=?,
+      ~activeOpacity=?,
+      ~tvParallaxProperties=?,
+      ~hasTVPreferredFocus=?,
       children,
     ) =>
   ReasonReact.wrapJsForReason(
@@ -58,6 +61,9 @@ let make =
           "small": fromOption(small),
           "active": fromOption(active),
           "accessibilityLabel": fromOption(accessibilityLabel),
+          "activeOpacity": fromOption(activeOpacity),
+          "tvParallaxProperties": fromOption(tvParallaxProperties),
+          "hasTVPreferredFocus": fromOption(hasTVPreferredFocus),
           "accessible":
             fromOption(UtilsRN.optBoolToOptJsBoolean(accessible)),
           "hitSlop": fromOption(hitSlop),
